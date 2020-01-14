@@ -1,5 +1,7 @@
 # eslint-plugin-clean-code
 
+UNDER CONSTRUCTION !!
+
 Clean code ESLint plugin
 
 ## Installation
