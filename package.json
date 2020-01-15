@@ -7,8 +7,20 @@
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "Petri Silen",
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pksilen/eslint-plugin-clean-code.git"
+  },
+  "author": "Petri Silen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pksilen/eslint-plugin-clean-code/issues"
+  },
+  "homepage": "https://github.com/pksilen/eslint-plugin-clean-code#readme",
   "scripts": {
     "test": "mocha tests --recursive"
   },
@@ -21,6 +33,5 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "license": "ISC"
+  }
 }
