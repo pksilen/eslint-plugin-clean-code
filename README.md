@@ -49,7 +49,7 @@ Then configure the rules you want to use under the rules section.
     --------------------------------------------------------------------------------------------------------
     | feature-envy      | Reports the "Feature Envy" code smell. Feature envy is defined as occurring when |
     |                   | a method calls methods on another class three or more times. Feature envy is     |
-    |                   | often an indication that functionality is located in the wrong class.            |                                                                        |
+    |                   | often an indication that functionality is located in the wrong class.            |
     
     
 ## Todo
@@ -76,6 +76,7 @@ Then configure the rules you want to use under the rules section.
 
 ## Contributing
 
+Feel free to contribute to any of above Todos or supply your own clean code rule not given in Todos.
 
 
 
