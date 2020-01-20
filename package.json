@@ -5,7 +5,9 @@
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "plugin",
+    "feature envy"
   ],
   "files": [
     "lib"
