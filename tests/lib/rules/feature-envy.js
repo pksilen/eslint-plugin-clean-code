@@ -14,9 +14,10 @@ var rule = require('../../../lib/rules/feature-envy'),
 
 RuleTester.setDefaultConfig({
     parserOptions: {
-        ecmaVersion: 6,
+        ecmaVersion: 11,
         sourceType: "module"
-    }
+    },
+    "parser": "/Users/pksilen/Code/eslint-plugin-clean-code/node_modules/babel-eslint"
 });
 
 
@@ -33,7 +34,9 @@ ruleTester.run('feature-envy', rule, {
         "import _ from 'lodash'; const a = []; a.head(); a.head(); a.head()",
         "console.log('test'); console.log('test'); console.log('test');",
         "class TestObj { testFunction() {}; }; const testObj = new TestObj(); function test() { testObj.testFunction(); testObj.testFunction(); }",
-        "class TestObj { testFunction() {}; }; const testObj = new TestObj(); const test = () => testObj.testFunction();"
+        "class TestObj { testFunction() {}; }; const testObj = new TestObj(); const test = () => testObj.testFunction();",
+        "class TestObj { testFunction() {}; }; const testObj = new TestObj(); class Test { test() { testObj.testFunction(); } }",
+        "class TestObj { testFunction() {}; }; const testObj = new TestObj(); class Test { test = () => { testObj.testFunction(); } }"
     ],
 
     invalid: [
@@ -42,6 +45,20 @@ ruleTester.run('feature-envy', rule, {
             errors: [{
                 message: "Feature envy: object 'testObj' called multiple times",
                 type: "FunctionDeclaration"
+            }]
+        },
+        {
+            code: "class TestObj { testFunction() {}; }; const testObj = new TestObj(); class Test { test() { testObj.testFunction(); testObj.testFunction(); testObj.testFunction(); } }",
+            errors: [{
+                message: "Feature envy: object 'testObj' called multiple times",
+                type: "MethodDefinition"
+            }]
+        },
+        {
+            code: "class TestObj { testFunction() {}; }; const testObj = new TestObj(); class Test { test = () => { testObj.testFunction(); testObj.testFunction(); testObj.testFunction(); } }",
+            errors: [{
+                message: "Feature envy: object 'testObj' called multiple times",
+                type: "ClassProperty"
             }]
         },
         {
@@ -72,6 +89,5 @@ ruleTester.run('feature-envy', rule, {
                 type: "FunctionDeclaration"
             }]
         }
-
     ]
 });
