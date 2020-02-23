@@ -31,6 +31,7 @@ ruleTester.run('feature-envy', rule, {
         "Number.isFinite(1); Number.isFinite(2); Number.isFinite(3);",
         "const str = ''; str.trim(); str.trim(); str.trim()",
         "import _ from 'lodash'; const a = []; a.head(); a.head(); a.head()",
+        "console.log('test'); console.log('test'); console.log('test');",
         "class TestObj { testFunction() {}; }; const testObj = new TestObj(); function test() { testObj.testFunction(); testObj.testFunction(); }"
     ],
 
