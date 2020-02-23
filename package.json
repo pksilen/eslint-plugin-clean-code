@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-clean-code",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Clean code ESLint plugin",
   "keywords": [
     "eslint",
