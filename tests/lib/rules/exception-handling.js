@@ -29,6 +29,7 @@ ruleTester.run('exception-handling', rule, {
 
   valid: [
     "function tryDoSomething() { throw new Error(''); }",
+    "function doSomething() { throw new UnrecoverableError(''); }",
     "function tryDoSomething() { throw new Error(''); } function useJee() { try { tryDoSomething(); } catch(error) {}};"
   ],
 

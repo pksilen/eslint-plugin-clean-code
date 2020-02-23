@@ -53,7 +53,6 @@ Then configure the rules you want to use under the rules section.
     
     
 ## Todo
-- [ ] Allow feature envy for library classes and lodash (_)
 - [ ] Allow end-user configuration of object name/class for which feature envy is not reported 
 
 - [ ] Chain of 'instanceof' checks
